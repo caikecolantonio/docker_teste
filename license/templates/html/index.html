@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td, th {
+           border: 1px solid black;
+           width: 550px;
+        }
+     </style> 
+</head>
+<body>
+    <h1>Clients Information:</h1>
+    <table style="text-align:center">
+    <tr>
+        <td>Cliente Name:</td>
+        <td>License Type:</td>
+        <td>Package:</td>
+        <td>Expiration Time:</td>
+        <td>Days to expire:</td>
+        <td>Email Sended ?</td>
+    </tr>
+
+    {% for x in licenses %}
+
+    <tr>
+    <td> {{ x.client }}</td>
+    <td> {{ x.license_type }} </td>
+    <td> {{ x.package }}</td>
+    <td> {{ x.expiration_datetime }}</td>
+    <td> {{ x.days_to_expire }}</td>
+    <td> {{ x.is_send }}</td>
+    </tr>
+    is_send
+
+    {% endfor %}
+
+    {{caike}}
+</table>
+</body>
+</html>
